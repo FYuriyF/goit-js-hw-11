@@ -61,7 +61,11 @@ function onLoadMoreBtn() {
 
       const totalPages = Math.ceil(data.totalHits / perPage);
 
-      if (page > totalPages) {
+      // if (page > totalPages) {
+      //   loadMoreBtn.classList.add('is-hidden');
+      //   alertEndOfSearch();
+      // }
+      if (data.totalHits < page * perPage) {
         loadMoreBtn.classList.add('is-hidden');
         alertEndOfSearch();
       }
